@@ -1,0 +1,578 @@
+/* Breakpoints:
+   - mobile: 768px (width of the main content + 28px to have a margin before changing)
+   - tablet: 955px (not a great cover, but this is the size of the main navigation in desktop)
+   - desktop: 1300px
+
+*/
+
+/* colors
+ - light pink: #fdf4f7
+ - medium pink: #ebb0c4
+ - dark pink: #cf69ab
+
+*/
+
+
+
+/* BASE */
+html, body{
+  padding: 0;
+  margin: auto;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-size: 14px;
+}
+
+body{
+  max-width: 1300px;
+}
+
+header,section{
+  margin: auto;
+  width: 100%;
+}
+
+/* HEADERS */
+header.main{
+  font-size: 18px;
+  color: #cf69ab;
+}
+
+header.main h1{
+  font-size: 60px;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 auto 25px auto;
+  line-height: 60px;
+}
+
+header.main{
+  background: #fff9f1 url("images/banner-background.jpg") no-repeat 50% top;
+}
+
+header.main .holder{
+  max-width: 940px;
+  margin: auto;
+}
+
+header.main .content{
+  max-width: 540px;
+  padding:80px 0 50px 0;
+}
+
+header.main .copy{
+max-width: 360px;
+margin: auto;
+}
+header.main .copy p{
+  padding-bottom: 15px;
+}
+
+header.main .mobile-buttons{display: none;}
+
+header.secondary{
+  padding-bottom: 35px;
+}
+header.secondary h2{
+  font-size: 54px;
+  color: #cf69ab;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: normal;
+  margin: 10px 0 35px 0;
+  letter-spacing: 5px;
+}
+
+header.secondary h6, section.blog h6{
+  color: #cf69ab;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+header ul{
+  margin: auto;
+  padding: 0;
+  text-align: center;
+}
+header ul li{
+  display: inline-block;
+}
+header li a{
+  color: #cf69ab;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  padding: 0 20px;
+  text-decoration: none;
+  min-width: 80px;
+  margin: 0 0 7px 0;
+}
+header ul li a:hover, header ul li a.selected{
+  margin: 0;
+}
+
+section header ul li a::after{
+  content: '';
+  width: 0;
+  transition: width 0.5s ease
+}
+
+section header ul li a:hover:after, section header ul li a.selected:after{
+  content: '';
+  width: 80px;
+  height: 2px;
+  background-color: #e1cebf;
+  display: block;
+  margin: 5px auto 0 auto;
+}
+
+/* NAVIGATION */
+nav.main{
+  width: 100%;
+  margin: auto;
+}
+nav.main ul li a{
+  background-color: #ebb0c4;
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  padding:20px 46px;
+  margin:0 3px;
+  text-decoration: none;
+  border:none;
+  position: relative;
+}
+
+nav.main a:hover, nav.main a.selected{
+  background-color: #cf69ab;
+}
+
+nav.main a:after{
+  content: '';
+  display: block;
+  position: absolute;
+  margin: 0 0 0 -20px;
+  transition: margin .5s ease;
+}
+
+nav.main a:hover:after, nav.main a.selected:after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #cf69ab;
+  position: absolute;
+  margin: 15px 0 0 -20px;
+  left: 50%;
+}
+
+/* SECTIONS */
+section{
+  padding:50px 0 40px 0;
+  clear: both;
+}
+
+section .container{
+  max-width: 740px;
+  margin: auto;
+}
+
+section .copy{
+  max-width: 280px;
+  line-height: 25px;
+}
+
+section .image-collection-1, section .image-collection-2, section .image-collection-3{
+  position: relative;
+  max-width: 100%;
+}
+
+section .image-collection-1 .img-1{
+  max-width: 330px;
+  position: relative;
+  z-index: 0;
+}
+
+section .image-collection-1 .img-1 img{
+  width: 100%;
+  padding-top: 25%;
+}
+
+section .image-collection-1 .img-2{
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+}
+
+section .image-collection-1 .img-2 img{
+  max-width: 415px;
+  position: relative;
+  z-index: 5;
+  top: 0;
+  right: 0;
+}
+
+section .image-collection-1 .img-2 .square{
+  width: 415px;
+  height: 580px;
+  position: absolute;
+  z-index: 0;
+  top: 20px;
+  left: -10px;
+}
+
+section .image-collection-2 .img-1{
+  max-width: 330px;
+  position: relative;
+  float: right;
+  margin-top: 25%;
+}
+
+section .image-collection-2 .img-1 img{
+  max-width: 100%;
+  z-index: 5;
+  position: relative;
+  padding: 0 10px 0 0;
+}
+
+section .image-collection-2 .img-2 .copy{
+  max-width: 280px;
+  padding-left: 40px;
+  float:right;
+  vertical-align: top;
+  padding-top: 30px;
+  display: table-cell;
+}
+
+section .image-collection-2 .img-2 img{
+  display: table-cell;
+  max-width: 415px;
+}
+
+section .image-collection-2 .img-1 .square{
+  width: 254px;
+  height: 370px;
+  position: absolute;
+  z-index: 0;
+  bottom: -10px;
+  right: -10px;
+}
+
+section .image-collection-2 .img-2{
+  position: absolute;
+  z-index: 0;
+  display: table;
+}
+
+section .image-collection-3 .img-2 img{
+  max-width: 415px;
+  right: 0;
+  position: absolute;
+}
+
+section .image-collection-3 .img-1{
+  max-width: 335px;
+  padding-top: 25%;
+}
+
+section .image-collection-3 .img-1 img{
+  max-width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+section .image-collection-3 .img-1 .square{
+  width: 245px;
+  height: 370px;
+  position: absolute;
+  z-index: 0;
+  bottom: -10px;
+  margin-left: 43px;
+}
+
+section .image-collection-3 .img-2{
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+}
+section .image-collection-3 .img-2 .copy{
+  max-width: 280px;
+  float: left;
+}
+
+section a.button{display: none;}
+
+section.post-pregnancy, section.blog{
+  padding: 60px 0;
+}
+section.post-pregnancy header, section.blog header{
+  padding-bottom: 0;
+}
+section.post-pregnancy .container, section.blog .container{
+  max-width: 800px;
+}
+section.blog h6{display: none;}
+section.post-pregnancy .copy, section.blog .copy{
+  max-width: 400px;
+  margin: auto;
+  padding-bottom: 30px;
+}
+section.post-pregnancy header h6{display: none;}
+
+/* ELEMENTS */
+
+a.button{
+  display: block;
+  max-width: 275px;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  border:2px solid #cf69ab;
+  color: #cf69ab;
+  padding:10px 0;
+  background-color: #ffffff;
+  text-decoration: none;
+  margin: 20px auto;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a.button:hover{
+  background-color: #cf69ab;
+  color: #ffffff;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+ul.image-menu li{
+  display: inline-block;
+  padding: 0 1%;
+}
+
+ul.image-menu li:first-of-type{
+ padding: 0 1% 0 0;
+}
+
+ul.image-menu li:last-of-type{
+ padding: 0 0 0 2%;
+}
+
+ul.image-menu span{
+  display: block;
+  padding-top: 15px;
+}
+
+ul.image-menu a{
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  color: #cf69ab;
+}
+ul.image-menu a img{
+  transition: transform .5s ease;
+}
+ul.image-menu a span{
+  transition: color .5s ease;
+}
+ul.image-menu a:hover{
+  color: #834772;
+}
+
+ul.image-menu a:hover img{
+  transform: scale(1.1);
+}
+
+/* MISC CLASSES */
+.pink-bg-lt{
+  background-color: #fdf4f7;
+}
+.pink-bg-md{
+  background-color: #ebb0c4;
+}
+.center{
+  text-align: center;
+}
+.float-right{
+  float:right;
+}
+
+.highlight-container{
+  padding: 40px;
+  display: table;
+}
+
+.highlight-container .content{
+  padding: 75px 60px;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.highlight-container > div{
+  display: table-cell;
+}
+
+.highlight-container .content p.title{
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: #cf69ab;
+  font-weight: bold;
+}
+
+.highlight-container .content p{
+  padding-bottom: 30px;
+  margin: 0;
+  line-height: 20px;
+}
+
+.highlight-container .content a{
+  border: 2px solid #cf69ab;
+  color: #cf69ab;
+  padding: 10px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.highlight-container .content a:hover{
+  background: #cf69ab;
+  color: #fdf4f7;
+}
+
+.grey-box{
+  height:400px;
+  width:375px;
+  background-color: #9a9a9a;
+  display: block;
+}
+
+
+/* Tablet */
+@media screen and (max-width: 955px), (max-device-width: 955px){
+  header.main .holder{width: 100%;}
+
+  nav.main li{display: block;}
+  nav.main ul{
+    background-color: #ffffff;
+  }
+  header.main .content {padding-left: 10px;}
+  nav.main ul li a{
+    padding: 10px;
+    margin: 3px 0;
+    max-width: 100%;
+  }
+  nav.main a:hover:after, nav.main a.selected:after{ content: none;}
+
+}
+
+/* MOBILE */
+
+@media screen and (max-device-width: 768px) {
+  header.main{
+    background: none;
+  }
+  header.main .holder{
+    background: #ffffff url("images/banner-mobile.jpg") no-repeat top left / cover;
+  }
+  body{font-size: 22px;}
+  nav.main{display: none;}
+  header.main .holder{max-width: 100%;}
+  header.main .content{width: 35%; padding: 200px 0 350px 5%;}
+  header.main .copy a{display: none;}
+  header.main .mobile-buttons{display: block; padding-top: 40px;}
+  header.main h1{margin: 0 auto 25px auto;}
+  header.main .copy p {padding: 0 20px 45px 20px; font-size: 24px;}
+  header.secondary {padding-bottom: 0; max-width: 50%;}
+  header.secondary h2 {margin: 10px 0 10px 0; font-size: 64px; line-height: 60px;}
+  header.secondary h6, section.blog h6 {font-size: 22px;}
+  section header.secondary ul, section .image-collection-3 .img-1, section .image-collection-3 .img-1 .square{display: none;}
+  section .container{max-width: 95%;}
+  section .copy{max-width: 100%; text-align: center; padding-bottom: 25px; line-height: 30px;}
+  section .image-collection-1, section .image-collection-2{max-width:80%; margin: auto;}
+  section .image-collection-3{max-width:98%; margin: auto;}
+  section .image-collection-3 .img-2 {max-width: 100%}
+  section .image-collection-1 .img-1 img {display: none}
+  section .image-collection-1 .img-1{max-width: 100%;}
+  section .image-collection-1 .img-2 {position: relative;}
+  section .image-collection-1 .img-2 img {max-width: 98%; padding-left: 2%;}
+  section .image-collection-1 .img-2 .square {height: 95%; left:0; top: 10px;}
+  section .image-collection-2 .img-1 {display: none;}
+  section .image-collection-2 .img-2 {position: relative;margin: auto; display: block;}
+  section .image-collection-2 .img-2 .copy{max-width: 100%; padding-left: 0; display: block; float:none;}
+  section .image-collection-2{display: block; position: relative;}
+  section .image-collection-2 .img-2 img {
+    display: block;
+    max-width: 98%;
+    margin: auto;
+    padding: 0 10px 50px 0;
+    position: relative;
+    z-index: 5;
+  }
+  section .image-collection-2 .img-2 .square{
+    width: 70%;
+    height: 80%;
+    right: 0;
+    bottom: 40px;
+    position: absolute;
+    z-index: 0;
+  }
+  section .image-collection-3{padding-bottom: 40px;}
+  section .image-collection-3 .img-2{position: relative;}
+  section .image-collection-3 .img-2 .copy{max-width: 80%; margin: auto; float: none; padding-top: 30px;}
+  section .image-collection-3 .img-2 img{position: relative; max-width: 80%; width: 80%; padding-left: 10px; z-index: 5; margin-left:10%}
+  section .image-collection-3 .img-2 .square{
+    width: 50%;
+    height: 77%;
+    margin-left: 10%;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+    top: 20%;
+  }
+  section.post-pregnancy .container, section.blog .container{max-width: 98%;}
+  section.post-pregnancy .copy, section.blog .copy { max-width: 80%;}
+  section.post-pregnancy header h6{display: block;}
+  section.blog h6{display: block; padding-bottom:30px }
+  section.blog .title{display: none;}
+  .highlight-container > div, .highlight-container .content{display: block}
+  .highlight-container .content{padding: 25px 0 0 0;}
+  .highlight-container .content p{line-height: 30px; text-align: center;}
+  .grey-box{margin: auto; width: 480px; height:545px}
+  section a.button{display: block;}
+  ul.image-menu{max-width: 80%; margin: auto;}
+  ul.image-menu li{padding-top: 30px; width: 45%}
+  ul.image-menu li span{font-weight: normal;}
+  .highlight-container .content a{
+    display: block;
+    max-width: 275px;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+    border:2px solid #cf69ab;
+    color: #cf69ab;
+    padding:10px 0;
+    background-color: #ffffff;
+    text-decoration: none;
+    margin: 11px auto;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  ul.image-menu a img{width: 100%}
+  ul.image-menu li span{font-size: 34px;}
+  a.button, .highlight-container .content a{max-width: 90%; font-size: 24px; border-width:1px; padding: 25px 0;}
+  .float-right {float: none;}
+}
