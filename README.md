@@ -4,7 +4,7 @@ HTML/CSS site build test for macy's focusing on responsivness
 # Comments
 - I did not use flexbox because of bugs in IE 11
 - The design suggests that the main top menu is for jump-clicking to different sections of the site, but the instructions say not to use javascript.
-⋅⋅* I did not use html for jumping or make the main content fixed because I would have also used javascript to hide the large header while scrolling down and change the button selected in the main navigation
+-  I did not use html for jumping or make the main content fixed because I would have also used javascript to hide the large header while scrolling down and change the button selected in the main navigation
 - The design shows each section's menu has one of the items selected, not sure if this is to show state or because each section contains different pages. In this case I copied the designs.
 - Added small transitionst to make the site experience a little nicer
 - I used the break points 955px and 768px because these are around the sizes where main elements need to collapse.
